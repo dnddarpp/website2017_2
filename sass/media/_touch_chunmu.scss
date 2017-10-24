@@ -1,0 +1,273 @@
+@include respond-cozy {
+    .left_mov{
+        width:49%;
+    }
+    .showreel_video,.nfc_continer,.nav_container{
+        width: 100%;
+    }
+    .nav-col{
+        width: 44%;
+    }
+
+    .m_home{
+        display: none;
+    }
+    .ew_btn{
+        font-size: 3em;
+    }
+
+}
+@include respond-compact {
+    .viedo_play{
+        top:48%;
+    }
+    .m_home{
+        display: none;
+    }
+    .ew_btn{
+        font-size: 3em;
+    }
+    .right_btn, .left_btn{
+        display: none;
+    }
+}
+@include respond-pad {
+    .video{
+        video{
+            margin-top: -190px;
+            width: 150%;
+        }
+    }
+    .service{
+        height: 34em;
+    }
+    .nav-col_ser{
+        top:-43px;
+    }
+
+    .nowt_midden {
+    margin-top: 86px;
+    }
+    .ew_btn{
+        font-size: 2em;
+    }
+    .kob_font{
+        width:90%;
+        margin: 0 auto;
+    }
+    .m_home{
+        display: block;
+    }
+
+    .showreel_video,.nfc_continer,.nav_container{
+        width: 100%;
+    }
+    .header{
+        height:20em;
+    }
+    .right_btn, .left_btn{
+        display: none;
+    }
+    .nav-container-inner{
+        top: 113px;
+    }
+
+
+    .pin_abo_pic,.pin_abo_pic2{
+        display: none;
+    }
+    .about-container-inner{
+        top:85px;
+    }
+    .footer-container-inner{
+        top: 399px;
+    }
+    .footer-tab,.footer-tab{
+        width: 100%;
+        text-align: center!important;
+    }
+    .footer{
+        height: 74em;
+    }
+    .chei_box,.chei_box2,.chei_box3,.chei_box4 {
+        width: 100%;
+    }
+
+
+    .about_font{
+        padding: 0 20px;
+        font-size: 1.2em;
+    }
+    .show_wrapper{
+        width: 100%;
+    }
+    .mov{
+        width: 100%;
+    }
+    .pin_ser_pic{
+        filter: blur(10px);
+        width: 50%;
+    }
+    .pin_ser_pic2{
+        width: 45%;
+        filter: blur(0px);
+        right:-100px;
+        img{
+            width: 100%;
+        }
+    }
+    .pin_abo_pic_secon{
+        top:0;
+        left:0;
+        img{
+            width: 50%;
+        }
+    }
+    .pin_abo_pic2_secon{
+        top:50px;
+        right:0;
+        img{
+            width: 50%;
+        }
+
+    }
+    .pin_abo_pic3_secon{
+        top: 650px;
+        right: 285px;
+    }
+}
+@include respond-mobile {
+    .video{
+        height: 15em;
+        min-height: 17em;
+        video{
+            margin-top: -207px;
+            width: 150%;
+        }
+    }
+    .viedo_play{
+        top: 29%;
+    }
+    .logo{
+        width: 90px;
+
+    }
+    .home_btn{
+        font-size:0.8em;
+        letter-spacing: .2em;
+    }
+    .nav-container-inner{
+        top:67px;
+    }
+    .header {
+        height: 14em;
+    }
+    .nav-col_ser{
+        h2{
+            font-size: 2.3em;
+        }
+        .st_font{
+            font-size: 1.5em;
+        }
+    }
+    .nav-col_about{
+        h2{
+            font-size: 2.3em;
+        }
+    }
+
+    .service{
+        height: 29em;
+    }
+
+    .ew_btn{
+        font-size: 1.5em;
+    }
+    .scroll-btn{
+        width: 45px;
+        height: 45px;
+        margin-left: -23px;
+    }
+    .sprite{
+        width: 25px;
+        height: 25px;
+        margin-top: 19px;
+        margin-left: 12px;
+
+    }
+    .pin_abo_pic_secon{
+        top:0;
+        left:0;
+        img{
+            width: 50%;
+        }
+    }
+    .pin_abo_pic2_secon{
+        top:50px;
+        right:-54px;
+        img{
+            width: 50%;
+        }
+
+    }
+    .pin_abo_pic3_secon{
+        top: 800px;
+        right: 285px;
+    }
+    .about2{
+        height: 67em;
+    }
+    .picture_product{
+        .item01,.item02{
+            width: 100%;
+        }
+    }
+    .pin_ser_pic{
+        display: none;
+    }
+    .pin_ser_pic2{
+        display: none;
+    }
+    .show_wrapper{
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .menu {
+        height: 4em;
+    }
+    .mov{
+        width: 100%;
+        margin-bottom: 20px;
+        h4{
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+    .showreel_video{
+        margin-top: 64px;
+        h4{
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-left: 10px;
+            text-align: left;
+        }
+    }
+    .producttopbn{
+        margin-top: 4em;
+    }
+
+    .left_vid{
+            margin-bottom: 0px;
+    }
+    .appicon{
+        width: 135px;
+        height: 135px;
+    }
+    .nav-col_about{
+        .about_font{
+            padding: 0 20px;
+            font-size: 1.1em;
+        }
+    }
+}
