@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,41 +8,58 @@
     <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dist/css/owl.carousel.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="dist/js/chunmu.js"></script>
-    <link rel="stylesheet" href="../lib/css/normalize.min.css">
+    <link rel="stylesheet" href="lib/css/normalize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
+
+    <script src="pace/pace.js"></script>
+    <link href="pace/themes/pace-theme-barber-shop.css" rel="stylesheet" />
     <title></title>
+    <script type="text/javascript">
+    </script>
 </head>
 
 <body>
-    <div class="menu"><a href="nowte.html"><i class="mdi mdi-menu"></i></a></div>
+  <div class="testline"></div>
+  <div class="loading-container">
+
+    <div class="loading-block">
+      <div class="loading-line"></div>
+    </div>
+  </div>
+    <div class="menu"><a><i class="mdi mdi-menu hem"></i></a></div>
     <div class="home_btn">
         <a href="index.html" class="m_home">HOME</a>
     </div>
     <div class="header">
         <div class="nav-container-inner">
             <div class="nav-col right_btn">
-                <a href="about.html">ABOUT</a>
-                <a href="service.html">SERVICE</a>
-                <a href="portfolio_item.html">PORTFOLIO</a>
+                <a class="am1" href="about.html">ABOUT</a>
+                <a class="am2" href="service.html">SERVICE</a>
+                <a class="am3" href="portfolio_item.html">PORTFOLIO</a>
             </div>
             <div class="nav-col left_btn">
-                <a href="showreel.html">SHOWREEL</a>
-                <a href="#">CONTACT</a>
-                <a href="nowte.html">LANGUAGE</a>
+                <a class="am3" href="showreel.html">SHOWREEL</a>
+                <a class="am2" href="#">CONTACT</a>
+                <a class="am1 changeLang" href="#">LANGUAGE</a>
             </div>
             <div class="logo"><a href="index.html"><img src="images/2logo.png"></a></div>
         </div>
     </div>
 
     <div class="video">
+        <div class="vmask"></div>
         <div class="viedo_play">
             <img src="images/play.png">
         </div>
         <video autoplay loop poster="polina.jpg" id="bgvid">
-          <source src="polina.webm" type="video/webm">
-          <source src="../chunmu_web/images/Untitled.mp4" type="video/mp4">
+          <source src="robot.webm" type="video/webm">
+          <source src="images/robot.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -87,9 +103,9 @@
                 <div class="footer-tab contact-us">
                     <h3>CONTACT US</h3>
                     <p></p>
-                    <p><a href="mailto:hello@panicstudio.tv" target="_self">service@chun-mu.com</a></p>
-                    <p>OFFICE&nbsp;+02 2832 7868</p>
-                    <p>FAX&nbsp;+02 2832 7313</p>
+                    <p><a href="mailto:service@chun-mu.com" target="_self">service@chun-mu.com</a></p>
+                    <p>OFFICE&nbsp;+886 2 2832 7868</p>
+                    <p>FAX&nbsp;+886 2 2832 7313</p>
                     <p></p>
                 </div>
                 <div class="footer-tab follow-us">
@@ -111,7 +127,112 @@
             </div>
         </div>
     </div>
+    <!--main menu start-->
+    <div class="fullpage mainmenu note_bg">
+      <div class="portfolio_header">
+          <div class="menu_second_close">
+              <a><i class="mdi mdi-close"></i></a>
+          </div>
+          <div class="head_midden margintop">
+              <a href="#" class="head_left">TW</a>
+              <a href="#" class="head_right">EN</a>
+          </div>
+      </div>
+      <div class="nowt_midden">
+          <div class="line_lun"><img src="images/linebk2.png"></div>
+          <a href="about.html" class="ew_btn">ABOUT</a>
+          <a href="service.html" class="ew_btn">SERVICE</a>
+          <a href="portfolio_item.html" class="ew_btn">PORTFOLIO</a>
+          <a href="showreel.html" class="ew_btn">SHOWREEL</a>
+      </div>
 
+      <div class="nav_container">
+          <h3 class="black">FOLLOW & SHARE VALAIRE</h3>
+          <div class="center_aa">
+              <a href="#" class="share_icon2" target="_blank"><i class="mdi mdi-email-outline"></i></a>
+              <a href="#" class="share_icon2" target="_blank"><i class="mdi mdi-facebook"></i></a>
+              <a href="#" class="share_icon2" target="_blank"><i class="mdi mdi-vimeo"></i></a>
+              <p>©2017 Chun-Mu Studio All Rights Reserved</p>
+          </div>
+      </div>
+    </div>
+    <!--main menu end-->
+    <script type="text/javascript">
+
+      $(window).on("load", function (e) {
+        //TweenLite.defaultOverwrite = "all";
+        resetPageView()
+        console.log("load complete")
+        var line = $(".loading-line")
+        var ww = $(window).width()
+        TweenLite.to(line,4,{width:ww, onComplete:loadFinish})
+        var hh2 = $(window).height()/2
+        var hh = hh2+$(window).width()*0.088
+
+      })
+      function resetPageView(){
+        $("body").removeClass()
+        window.scrollTo(0,0);
+        $("body").addClass("onloading")
+        $(".mainmenu").hide()
+      }
+      function init(){
+        console.log("init")
+        $(".menu").click(function(){
+          showMenu()
+        })
+        $(".menu_second_close").click(function(){
+          hideMenu()
+        })
+        $(".changeLang").click(function(){
+          showMenu()
+        })
+      }
+      function loadFinish(){
+        var line = $(".loading-line")
+        var loading = $(".loading-container")
+        //loading完，把loading線收起來
+        $(".loading-line").css("right",0)
+        TweenLite.to(line,1,{width:0, onComplete:hideLoad})
+        init()
+      }
+      function hideLoad(){
+        $(".loading-line").hide()
+        LoadingOut()
+      }
+      function LoadingOut(){
+        console.log("LoadingOut")
+        var tl = new TimelineLite();
+        var loading = $(".loading-container")
+        var logo = $(".logo")
+        var vmask = $(".vmask")
+        var am1 =  $(".am1"),
+            am2 =  $(".am2"),
+            am3 =  $(".am3")
+            hem =  $(".hem")
+        var ww = $(window).width()
+        var vwpc =ww/100
+        tl.to(loading, 1, {top:vwpc*16.5,ease:Power4.easeOut})
+        .from(logo,0.8,{top:-200, ease:Back.easeOut.config(1)},"-=0.8")
+        .from(am3,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.76")
+        .from(am2,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.73")
+        .from(am1,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.70")
+        .from(hem,1,{left:-200, ease:Back.easeOut.config(1)},"-=0.67")
+        .to(loading, 1, {top:vwpc*47,ease:Power4.easeOut},"-=0.64")
+        .to(vmask, 0.5, {height:0,ease:Power4.easeOut, onComplete:unFreeze},"-=0.3")
+        .to(loading, 1, {top:vwpc*100,autoAlpha:0,ease:Power4.easeOut})
+
+      }
+      function showMenu(){
+        $(".mainmenu").slideDown()
+      }
+      function hideMenu(){
+        $(".mainmenu").slideUp()
+      }
+      function unFreeze(){
+        $("body").removeClass("onloading")
+      }
+    </script>
 </body>
 
 </html>
