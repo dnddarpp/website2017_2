@@ -751,6 +751,9 @@ body{
     width: 100%;
 }
 .home_btn{
+    position: relative;
+    top:0;
+    right:0;
     a{
         color:#000;
         &:hover{
@@ -773,6 +776,7 @@ body{
     position: absolute;
     top:0;
     left:0;
+    z-index: 3000;
 }
 .nowt_midden{
     width: 100%;
@@ -846,8 +850,8 @@ a{
   height:150vh;
   top:-8.8vw;
   position: fixed;
-  background: #FFc600;
-  //opacity: 0.5;
+  background: #FFc6aa;
+  opacity: 0.5;
   z-index:3000;
   transform: skewY(-10deg);
   /*transform: skewY(-10deg);*/

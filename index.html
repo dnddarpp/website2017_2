@@ -16,18 +16,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
-
-    <script src="pace/pace.js"></script>
-    <link href="pace/themes/pace-theme-barber-shop.css" rel="stylesheet" />
     <title></title>
     <script type="text/javascript">
     </script>
 </head>
 
 <body>
-  <div class="testline"></div>
   <div class="loading-container">
-
     <div class="loading-block">
       <div class="loading-line"></div>
     </div>
@@ -208,26 +203,67 @@
         var vmask = $(".vmask")
         var am1 =  $(".am1"),
             am2 =  $(".am2"),
-            am3 =  $(".am3")
-            hem =  $(".hem")
+            am3 =  $(".am3"),
+            hem =  $(".hem"),
+            home_btn = $(".home_btn")
+        var service_L = $(".pin_ser_pic")
+        var service_M = $(".service-container-inner")
+        var service_R = $(".pin_ser_pic2")
         var ww = $(window).width()
+        var hh = $(window).height()
         var vwpc =ww/100
-        tl.to(loading, 1, {top:vwpc*16.5,ease:Power4.easeOut})
-        .from(logo,0.8,{top:-200, ease:Back.easeOut.config(1)},"-=0.8")
-        .from(am3,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.76")
-        .from(am2,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.73")
-        .from(am1,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.70")
-        .from(hem,1,{left:-200, ease:Back.easeOut.config(1)},"-=0.67")
-        .to(loading, 1, {top:vwpc*47,ease:Power4.easeOut},"-=0.64")
-        .to(vmask, 0.5, {height:0,ease:Power4.easeOut, onComplete:unFreeze},"-=0.3")
-        .to(loading, 1, {top:vwpc*100,autoAlpha:0,ease:Power4.easeOut})
+        var h_header = $(".header").height()
+        var h_video = $(".video").height()
+        console.log("h_header:"+h_header)
+        console.log("h_video:"+h_video)
+        var fh1 = h_header-vwpc*8.8
+        var fh2 = fh1+h_video
+        var fh3 = hh
+        //var fh1 = headerh+vwpc*16.5
+        if(ww>=1240){
+          console.log("t1_1")
+          tl.to(loading, 1, {top:fh1,ease:Power4.easeOut})
+          .from(logo,0.8,{top:-200, ease:Back.easeOut.config(1)},"-=0.8")
+          .from(am3,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.76")
+          .from(am2,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.73")
+          .from(am1,1,{top:-200, ease:Back.easeOut.config(1)},"-=0.70")
+          .from(hem,1,{left:-200, ease:Back.easeOut.config(1)},"-=0.67")
+          .to(loading, 1, {top:fh2,ease:Power4.easeOut},"-=0.64")
+          .to(vmask, 0.5, {height:0,ease:Power4.easeOut, onComplete:unFreeze},"-=0.3")
+          .to(loading, 1, {top:fh3,autoAlpha:0,ease:Power4.easeOut})
+        }else if(ww>=1096){
+          console.log("t1_2")
+          tl.to(loading, 1, {top:fh1,ease:Power4.easeOut})
+          .from(logo,0.8,{top:-200, ease:Back.easeOut.config(1)},"-=0.8")
+          .from(hem,1,{left:-200, ease:Back.easeOut.config(1)},"-=0.67")
+          .to(loading, 1, {top:fh2,ease:Power4.easeOut},"-=0.64")
+          .to(vmask, 0.5, {height:0,ease:Power4.easeOut, onComplete:unFreeze},"-=0.3")
+          .to(loading, 1, {top:fh3,autoAlpha:0,ease:Power4.easeOut})
+        }else {
+          console.log("t1_3")
+          tl.to(loading, 1, {top:fh1,ease:Power4.easeOut})
+          .from(logo,0.8,{top:-200, ease:Back.easeOut.config(1)},"-=0.8")
+          .from(home_btn,1,{right:-200, ease:Back.easeOut.config(1)},"-=0.67")
+          .from(hem,1,{left:-200, ease:Back.easeOut.config(1)},"-=1.67")
+          .to(loading, 1, {top:fh2,ease:Power4.easeOut},"-=0.64")
+          .to(vmask, 0.5, {height:0,ease:Power4.easeOut, onComplete:unFreeze},"-=0.3")
+          .to(loading, 1, {top:fh3,autoAlpha:0,ease:Power4.easeOut})
+        }
+
 
       }
       function showMenu(){
         $(".mainmenu").slideDown()
       }
       function hideMenu(){
-        $(".mainmenu").slideUp()
+        $(".mainmenu").slideUp(400,function(){
+          var tl = new TimelineLite();
+          var hem =  $(".hem"),
+              home_btn = $(".home_btn")
+          tl.from(hem,0.5,{left:-200, ease:Back.easeOut.config(1)})
+          .from(home_btn,0.5,{right:-200, ease:Back.easeOut.config(1)},"-=0.5")
+
+        })
       }
       function unFreeze(){
         $("body").removeClass("onloading")

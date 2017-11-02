@@ -902,6 +902,11 @@ body.onloading {
   width: 100%;
 }
 
+.home_btn {
+  position: relative;
+  top: 0;
+  right: 0;
+}
 .home_btn a {
   color: #000;
 }
@@ -924,6 +929,7 @@ body.onloading {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 3000;
 }
 
 .nowt_midden {
@@ -1000,7 +1006,7 @@ a {
   height: 150vh;
   top: -8.8vw;
   position: fixed;
-  background: #FFc600;
+  background: #FFc6aa;
   z-index: 3000;
   transform: skewY(-10deg);
   /*transform: skewY(-10deg);*/
