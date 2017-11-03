@@ -63,7 +63,7 @@
     </div>
   </div>
   <!--video start-->
-  <div class="video">
+  <div class="video topvideo">
     <div class="vmask"></div>
     <div class="viedo_play">
       <img src="images/play.png">
@@ -110,7 +110,7 @@
   </div>
   <!--content-container end index-->
   <!--content-container start about-->
-  <div class="content-container c_about" id="about">
+  <div class="content-container c_about">
     <div class="about2">
         <div class="pin_abo_pic_secon"><img src="images/ab_02.png"></div>
         <div class="pin_abo_pic2_secon"><img src="images/ab_01.png"></div>
@@ -127,7 +127,7 @@
   </div>
   <!--content-container end about-->
   <!--content-container start service-->
-  <div class="content-container c_service" id="service">
+  <div class="content-container c_service">
     <div class="medser">
         <div class="chei_box">
             <div class="sermore-container-inner">
@@ -188,7 +188,7 @@
   </div>
   <!--content-container end service-->
   <!--content-container start portfolio-->
-  <div class="content-container c_portfolio" id="portfolio">
+  <div class="content-container c_portfolio">
     <div class="portfolio_header">
         <div class="menu_second">
             <a href="nowte.html"><i class="mdi mdi-menu"></i> </a>
@@ -260,7 +260,7 @@
           </div>
       </div>
       <div class="picture_product">
-          <div class="item02"><video src="images/Untitled.mp4" controls></video></div>
+          <div class="item02"><video src="images/robot.mp4" controls></video></div>
           <div class="item01">
               <ul class="point">
                   <a href="#"><li class="big"></li></a>
@@ -288,7 +288,7 @@
   </div>
   <!--content-container end portfolio-->
   <!--content-container start showreel-->
-  <div class="content-container c_showreel" id="showreel">
+  <div class="content-container c_showreel">
     <div class="portfolio_header">
       <div class="menu_second">
         <a href="nowte.html"><i class="mdi mdi-menu"></i></a>
@@ -422,11 +422,12 @@
       var hh = hh2 + $(window).width() * 0.088
 
     })
-
-
-
     function init() {
       console.log("init")
+      $(window).on('hashchange', function(e){
+         var hash = window.location.hash
+         console.log("hash:"+hash)
+      });
       $(".menu").click(function() {
         showMenu()
       })
@@ -450,8 +451,9 @@
           $(".c_portfolio").show()
       })
       $("#menu4").click(function(){
-          resetContent()
-          $(".c_showreel").show()
+          //resetContent()
+          //$(".c_showreel").show()
+          initShowReel()
       })
       $("#menu5").click(function(){
         $('html, body').animate({
@@ -462,6 +464,16 @@
         });
       })
     }
+
+    function initShowReel(){
+      resetContent()
+      $(".menu").slideup()
+      $(".header").slideUp()
+      $(".topvideo").slideUp()
+      $(".c_showreel").show()
+    }
+
+
 
 
 

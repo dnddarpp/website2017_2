@@ -1077,7 +1077,7 @@ a {
   }
 
   .right_btn, .left_btn {
-    display: block;
+    display: none;
   }
 }
 @media only screen and (max-width: 1096px) {
@@ -1198,11 +1198,6 @@ a {
   .pin_abo_pic3_secon {
     top: 650px;
     right: 285px;
-  }
-
-  .home_btn {
-    font-size: 0.8em;
-    letter-spacing: .2em;
   }
 }
 @media only screen and (max-width: 768px) {
