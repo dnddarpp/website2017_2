@@ -656,6 +656,8 @@ body.onloading {
 .menu_second_close {
   float: right;
   margin: 12px 20px 0  0;
+  position: relative;
+  right: 0;
 }
 .menu_second_close i {
   font-size: 2em;
@@ -739,6 +741,8 @@ body.onloading {
 .head_midden {
   width: 92px;
   margin: 0 auto;
+  position: relative;
+  top: 0;
 }
 .head_midden a {
   font-family: "Roboto";
@@ -821,6 +825,8 @@ body.onloading {
   text-align: center;
   padding: 70px 0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  bottom: 0;
 }
 .nav_container h2 {
   font-size: 1.5em;
@@ -937,6 +943,8 @@ body.onloading {
   margin: 0 auto;
   margin-top: 150px;
   text-align: center;
+  position: relative;
+  top: 0;
 }
 .nowt_midden a {
   color: #000;
@@ -1006,9 +1014,8 @@ a {
   height: 150vh;
   top: -8.8vw;
   position: fixed;
-  background: #FFc6aa;
-  opacity: 0.5;
-  z-index: 3000;
+  background: #FFc600;
+  z-index: 3001;
   transform: skewY(-10deg);
   /*transform: skewY(-10deg);*/
 }
@@ -1022,7 +1029,7 @@ a {
 }
 .loading-block .loading-line {
   position: absolute;
-  height: 3px;
+  height: 2px;
   background: #131313;
   width: 0vw;
   z-index: 3002;

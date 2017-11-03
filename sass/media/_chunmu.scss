@@ -521,6 +521,8 @@ body{
 .menu_second_close{
     float: right;
     margin: 12px 20px 0  0;
+    position: relative;
+    right: 0;
     i{
         font-size: 2em;
         color: #000;
@@ -599,6 +601,8 @@ body{
 .head_midden{
     width: 92px;
     margin: 0 auto;
+    position: relative;
+    top: 0;
     a{
         font-family: "Roboto";
         color: #000;
@@ -674,6 +678,8 @@ body{
     text-align: center;
     padding: 70px 0;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    position: relative;
+    bottom: 0;
     h2{
         font-size: 1.5em;
         margin-bottom: 20px;
@@ -783,6 +789,8 @@ body{
     margin: 0 auto;
     margin-top: 150px;
     text-align: center;
+    position: relative;
+    top: 0;
     a{
         color:#000;
         &:hover{
@@ -850,9 +858,9 @@ a{
   height:150vh;
   top:-8.8vw;
   position: fixed;
-  background: #FFc6aa;
-  opacity: 0.5;
-  z-index:3000;
+  background: #FFc600;
+  //opacity: 0.5;
+  z-index:3001;
   transform: skewY(-10deg);
   /*transform: skewY(-10deg);*/
 }
@@ -866,7 +874,7 @@ a{
 
   .loading-line{
     position: absolute;
-    height: 3px;
+    height: 2px;
     background: #131313;
     width:0vw;
     z-index:3002;
