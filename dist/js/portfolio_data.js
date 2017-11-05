@@ -4,33 +4,36 @@ $(function(){
 	var portfolio=[[]]
 
 	//console.log("portfolio.length:"+portfolio)
+	//["名稱","類型","類型代號"]
+	//***類型代號***
+	//1:app
+	//2:media
+	//3:program
+	//4:web
+	//*************
 
 	portfolio[0] = ["大港開唱 AR","AR 3D  X  Modeling  X  Animation  ",1]
-	//app
 	portfolio[1] = ["台南歷史地圖","IOS/ANDROID  APP Object-C  X  Graphic Design",1]
-	//media
-	portfolio[2] = ["臺北歷史地圖","IOS/ANDROID  APP Object-C  X  Graphic Design",2]
-	//pro
-	portfolio[3] = ["音速空間VR","VR 3D  X  Modeling  X  Animation  ",3]
-	//web
-	portfolio[4] = ["大港開唱AR","AR 3D  X  Modeling  X  Animation ",4]
-	portfolio[5] = ["大港開唱","IOS/ANDROID  APP Concept  X  Graphic Design  X  Object-C",4]
+	portfolio[2] = ["臺北歷史地圖","IOS/ANDROID  APP Object-C  X  Graphic Design",1]
+	portfolio[3] = ["音速空間VR","VR 3D  X  Modeling  X  Animation  ",1]
+	portfolio[4] = ["大港開唱 AR","AR 3D  X  Modeling  X  Animation ",1]
+	portfolio[5] = ["大港開唱","IOS/ANDROID  APP Concept  X  Graphic Design  X  Object-C",1]
 	portfolio[6] = ["艾訊影片 2014 3D","CORPORATE FLIM 3D  X  Modeling  X  Animation  ",4]
 	portfolio[7] = ["艾訊影片 2015 2D","CORPORATE FILM 2D  X  Mograph",4]
 	portfolio[8] = ["艾訊影片 2016 3D","CORPORATE FLIM 3D  X  Modeling  X  Animation ",4]
 	portfolio[9] = ["艾訊影片 2017 3D","CORPORATE FLIM 3D  X  Modeling  X  Animation",4]
 	portfolio[10] = ["艾訊影片 2017 2D","CORPORATE FILM 2D  X  Mograph",4]
-	portfolio[11] = ["艾訊科技AXIOMTEK","Art Concept  X  HTML  X  CSS  X  System Programing  X  RWD",4]
+	portfolio[11] = ["艾訊科技 AXIOMTEK","Art Concept  X  HTML  X  CSS  X  System Programing  X  RWD",4]
 	portfolio[12] = ["經濟部國際貿易局","HTML  X  CSS  X  Art Concept  X  RWD",4]
 	portfolio[13] = ["光泉KUANG CHUAN","HTML  X  CSS  X  Art Concept  X  RWD",4]
 	portfolio[14] = ["光泉KUANG CHUAN","HTML  X  CSS  X  Art Concept  X  RWD",4]
 	portfolio[15] = ["外貿協會影片 2015","2D  X  Mograph",4]
 	portfolio[16] = ["外貿協會影片 2016","2D  X  Mograph",4]
-	portfolio[17] = ["閃靈樂團CHOTHNIC","IOS  APP Concept  X  Graphic Design  X  3D  X  Object-C",4]
+	portfolio[17] = ["閃靈樂團 CHOTHNIC","IOS  APP Concept  X  Graphic Design  X  3D  X  Object-C",4]
 	portfolio[18] = ["暮沉武德殿","MV VFX Smoke Simulate X 3D X Charactor Acting X Modeling",4]
 	portfolio[19] = ["音速空間VR","VR 3D X Modeling X Animation",4]
 	portfolio[20] = ["音速空間","IOS/ANDROID  APP Concept  X  Graphic Design  X  Object-C",4]
-	portfolio[21] = ["台灣書院TAIWAN ACDEMY","Art Concept  X  Flash  X  Motion Design  X  HTML",4]
+	portfolio[21] = ["台灣書院 TAIWAN ACDEMY","Art Concept  X  Flash  X  Motion Design  X  HTML",4]
 	portfolio[22] = ["財團法人台灣癌症基金會","Art Concept  X  HTML  X  CSS",4]
 	portfolio[23] = ["神之鄉","IOS/ANDROID  APP Concept  X  Graphic Design  X   Object-C",4]
 	portfolio[24] = ["中央研究院數位文化中心","IOS/ANDROID  APP Concept  X  Graphic Design  X  Object-C",4]

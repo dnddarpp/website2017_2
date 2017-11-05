@@ -653,20 +653,20 @@ body.onloading {
   color: #ff7be9;
 }
 
-.menu_second_close {
+.menu_close, .menu_second_close {
   float: right;
   margin: 12px 20px 0  0;
   position: relative;
   right: 0;
 }
-.menu_second_close i {
+.menu_close i, .menu_second_close i {
   font-size: 2em;
   color: #000;
 }
-.menu_second_close a {
+.menu_close a, .menu_second_close a {
   color: #000;
 }
-.menu_second_close a:hover {
+.menu_close a:hover, .menu_second_close a:hover {
   color: #ff7be9;
 }
 
@@ -736,6 +736,7 @@ body.onloading {
 
 .bgyellow {
   background-color: #ffd749 !important;
+  overflow: auto;
 }
 
 .head_midden {
