@@ -96,5 +96,8 @@ function resetMenu(obj){
   for(var i=1;i<=4;i++){
     $("#menu"+i).removeClass("on")
   }
-  obj.addClass("on")
+  if(obj){
+      obj.addClass("on")
+  }
+
 }

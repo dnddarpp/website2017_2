@@ -22,7 +22,6 @@
   <title></title>
   <script type="text/javascript">
     resetPageView()
-
   </script>
 </head>
 
@@ -387,13 +386,35 @@
   var h_cindex = $(".c_index").height()
   var h_video = $(".topvideo").height()
   var h_service = $(".service").height()
-    /*$(window).bind('beforeunload',function(){
-      return 'are you sure you want to leave?';
-    });
-    $( window ).on("unload",function(){
-      location.href = "index.html"
-    })*/
+    $(window).on('hashchange', function(e){
+        var hash = location.hash
+        console.log("hashchange hash:"+hash)
+        switch(hash){
+          case "#about":
+          break
+          case "#service":
+          break
+          case "#portfolio":
+          break
+          case "#showreel":
+          break
+          case "#contact":
+          break
+          default:
+          console.log("default hash:"+hash)
+          break
 
+        }
+    });
+    //當他按了瀏覽器上下一頁按鈕
+    /*if (window.history && window.history.pushState) {
+
+      $(window).on('popstate', function() {
+        alert("popstate")
+        goPageOut()
+      });
+
+    }*/
     $(window).on("load", function(e) {
       $('html, body').scrollTop(0);
       //TweenLite.defaultOverwrite = "all";
@@ -426,6 +447,7 @@
       })
       $(".menu_second_close").click(function() {
         if(pageName=="#showreel"){
+          resetMenu("")
           resetContent()
           initIndex()
         }
@@ -458,9 +480,11 @@
           return
         }
           resetMenu($(this))
-          goPageOut()
+          //goPageOut()
+          goPageOut2()
       })
       $("#menu4").click(function(){
+        console.log("pageName:"+pageName)
         if($(this).hasClass("on")){
           return
         }
@@ -471,8 +495,7 @@
         $('html, body').animate({
           scrollTop: $("#contact").offset().top
         }, 1000, function(){
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          //window.location.hash = hash;
+
         });
       })
       $(".changeLang").click(function() {
@@ -509,10 +532,10 @@
             .to(service,1.8,{height:0, ease: Power2.easeInOut, onComplete:goPageIn},0)
           break
         case "#showreel":
-          initShowReel()
+          //initShowReel()
           break
         case "#portfolio":
-          initPortfolio()
+          //initPortfolio()
           break
         case "#portfolio_pgae":
           break
@@ -560,9 +583,17 @@
       var vmask = $(".vmask")
       var video = $(".topvideo")
       var service = $(".service")
-        var ww = $(window).width()
+      var blacktop = $(".mask-block.mtop .fillblock")
+      var blackbot = $(".mask-block.mbot .fillblock")
+      var hh = $(window).height()/2
+      var ww = $(window).width()
+      var wpc = $(window).width()/100*9
+      var bh = hh+wpc
+      blacktop.css("top",bh)
+      blackbot.css("bottom",bh)
+      $(".c_index").css("display","block")
       if (ww >= 1097) {
-        tl.to(about,0,{top:0,opacity:1, ease: Power4.easeOut},0)
+        tl.to(about,1,{top:0,opacity:1, ease: Power4.easeOut},0)
           .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},0.3)
           .to(vmask, 0.5, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 0.8)
           .to(service, 0.8, {height: h_service,ease: Back.easeOut.config(2.5)}, 1.5)
@@ -578,6 +609,12 @@
             .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},1)
             .to(vmask, 0.8, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 1.5)
       }
+
+      var blacktop = $(".mask-block.mtop .fillblock")
+      var blackbot = $(".mask-block.mbot .fillblock")
+      console.log("bh:"+bh)
+      tl.to(blacktop,0.8,{top:0, ease: Power4.easeIn},0)
+        .to(blackbot,0.8,{bottom:0, ease: Power4.easeIn, onComplete:goPageIn},0)
     }
     function initAbout(){
       console.log("initAbout")
