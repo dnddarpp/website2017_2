@@ -107,6 +107,10 @@
  */
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+html {
+  background: #131313;
+}
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
@@ -159,7 +163,7 @@ body.onloading {
   max-width: 96em;
   margin: 0 auto;
   transform: skewY(10deg);
-  top: 212px;
+  top: 15em;
 }
 .nav-container-inner a {
   color: #000;
@@ -173,7 +177,7 @@ body.onloading {
 .video {
   width: 100%;
   height: 36em;
-  min-height: 30em;
+  margin-top: -1px;
   background-color: #ff7be9;
   transform: skewY(-10deg);
   transform-origin: 0 0;
@@ -211,8 +215,6 @@ body.onloading {
   width: 100%;
   height: 40em;
   background-color: #303030;
-  transform: skewY(-10deg);
-  transform-origin: 0 0;
   background-image: url("../images/bgvi.svg");
   overflow: hidden;
 }
@@ -230,8 +232,6 @@ body.onloading {
 
 .medser {
   width: 100%;
-  transform: skewY(-10deg);
-  transform-origin: 0 0;
   box-sizing: border-box;
   overflow: hidden;
   display: inline-block;
@@ -269,16 +269,16 @@ body.onloading {
   background-color: #ffc600;
   width: 100%;
   height: 50em;
-  transform: skewY(-10deg);
-  transform-origin: 0 0;
+}
+.about .about_skin {
+  position: relative;
+  top: 0;
 }
 
 .about2 {
   background-color: #ffc600;
   width: 100%;
   height: 60em;
-  transform: skewY(-10deg);
-  transform-origin: 0 0;
 }
 
 .pin_abo_pic {
@@ -375,6 +375,9 @@ body.onloading {
   top: 0;
   width: 43%;
   max-width: 39.5em;
+}
+.nav-col a.on {
+  color: #ff7be9;
 }
 
 .right_btn {
@@ -1037,10 +1040,61 @@ a {
   bottom: 0;
 }
 
+.mask-container {
+  pointer-events: none;
+  width: 100vw;
+  height: 150vh;
+  top: -8.8vw;
+  position: fixed;
+  z-index: 1990;
+  transform: skewY(-10deg);
+}
+.mask-container .mask-block {
+  width: 100vw;
+  position: absolute;
+  height: calc( 50vh + 8.9vw);
+  overflow: hidden;
+}
+.mask-container .mask-block.mtop .fillblock {
+  top: calc( 50vh + 8.9vw );
+}
+.mask-container .mask-block.mbot {
+  bottom: 8.9vw;
+}
+.mask-container .mask-block.mbot .fillblock {
+  bottom: calc( 50vh + 8.9vw );
+}
+.mask-container .mask-block .fillblock {
+  width: 100vw;
+  background: #131313;
+  height: calc( 50vh + 8.9vw);
+  position: absolute;
+}
+
 .fullpage {
   width: 100vw;
   height: 100vh;
   position: fixed;
+}
+
+.content-container {
+  margin-top: -1px;
+}
+.content-container.gohide {
+  overflow: hidden;
+}
+
+.c_index, .c_about, .c_service {
+  transform: skewY(-10deg);
+  transform-origin: 0 0;
+  position: relative;
+  top: 0;
+}
+
+.c_showreel {
+  position: relative;
+  top: 0;
+  z-index: 1999;
 }
 
 @media only screen and (min-width: 1240px) {
@@ -1078,7 +1132,7 @@ a {
   }
 
   .right_btn, .left_btn {
-    display: none;
+    display: block;
   }
 }
 @media only screen and (max-width: 1096px) {
@@ -1200,11 +1254,15 @@ a {
     top: 650px;
     right: 285px;
   }
+
+  .home_btn {
+    font-size: 0.8em;
+    letter-spacing: .2em;
+  }
 }
 @media only screen and (max-width: 768px) {
   .video {
     height: 15em;
-    min-height: 17em;
   }
   .video video {
     margin-top: -207px;

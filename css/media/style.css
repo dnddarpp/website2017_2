@@ -58,13 +58,13 @@ body {
   background-color: #000;
 }
 
-.portfolio-container {
+.portfolio-list-container {
   height: 100vh;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-.portfolio-container:after {
+.portfolio-list-container:after {
   content: " ";
   display: block;
   clear: both;

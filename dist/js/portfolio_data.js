@@ -63,6 +63,7 @@ $(function(){
 		var ary = portfolio[i]
 		var typepic = typeimg[ary[2]]
 		$(".works").append('<div class="work">' +
+											'<a class="gowork" href="#job'+i+'">' +
 											'<div class="pic"><img src="images/day'+i+'.jpg"></div>' +
 											'<div class="day">' +
 											'<p><img src="images/'+typepic+'" style=""></p>' +
@@ -76,7 +77,7 @@ $(function(){
 											'<div></div>' +
 											'</div>' +
 											'</div>' +
-											'</div>');
+											'</a></div>');
 
 	}
 	//設定大圖

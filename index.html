@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="bower_components/loaders.css/loaders.css">
+  <link rel="stylesheet" href="lib/css/normalize.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/media/style.css">
-  <link rel="stylesheet" href="bower_components/loaders.css/loaders.css">
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="dist/js/bootstrap.min.js"></script>
-  <script src="dist/js/chunmu.js"></script>
-  <link rel="stylesheet" href="lib/css/normalize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/easing/EasePack.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"></script>
-  <script src="dist/js/main.js"></script>
+  <script src="dist/js/chunmu.js"></script>
+  <script src="dist/js/portfolio_data.js"></script>
   <title></title>
   <script type="text/javascript">
     resetPageView()
-    function resetPageView() {
-      $('html, body').scrollTop(0);
-      $("body").addClass("onloading")
 
-      $(".mainmenu").hide()
-      resetContent()
-      $(".c_index").show()
-    }
-    function resetContent(){
-      $(".content-container").hide()
-    }
   </script>
 </head>
 
@@ -42,6 +31,10 @@
     <div class="loading-block">
       <div class="loading-line"></div>
     </div>
+  </div>
+  <div class="mask-container">
+    <div class="mask-block mtop"><div class="fillblock"></div></div>
+    <div class="mask-block mbot"><div class="fillblock"></div></div>
   </div>
   <div class="menu"><a><i class="mdi mdi-menu hem"></i></a></div>
   <div class="home_btn">
@@ -52,7 +45,7 @@
       <div class="nav-col right_btn">
         <a class="am1" href="#about" id="menu1">ABOUT</a>
         <a class="am2" href="#service" id="menu2">SERVICE</a>
-        <a class="am3" href="#portfolio.html" id="menu3">PORTFOLIO</a>
+        <a class="am3" href="#portfolio" id="menu3">PORTFOLIO</a>
       </div>
       <div class="nav-col left_btn">
         <a class="am3" href="#showreel" id="menu4">SHOWREEL</a>
@@ -62,13 +55,25 @@
       <div class="logo"><a href="index.html"><img src="images/2logo.png"></a></div>
     </div>
   </div>
+  <div class="portfolio_header content-header">
+      <div class="menu_second">
+          <a href="#"><i class="mdi mdi-menu"></i> </a>
+      </div>
+      <div class="menu_second_close">
+          <a href="#index"><i class="mdi mdi-close"></i></a>
+      </div>
+      <div class="head_midden">
+          <a href="#" class="head_left"><i class="mdi mdi-chevron-left"></i></a>
+          <a href="#" class="head_right"><i class="mdi mdi-chevron-right"></i></a>
+      </div>
+  </div>
   <!--video start-->
   <div class="video topvideo">
     <div class="vmask"></div>
     <div class="viedo_play">
       <img src="images/play.png">
     </div>
-    <video autoplay loop poster="polina.jpg" id="bgvid">
+    <video autoplay loop poster="polina.jpg" id="bgvid" autoplay loop muted>
           <source src="robot.webm" type="video/webm">
           <source src="images/robot.mp4" type="video/mp4">
         </video>
@@ -88,22 +93,24 @@
             <div class="st_font">WEB</div>
             <div class="st_font">APP</div>
             <div class="st_font">PROGRAMMIN</div>
-            <a href="service.html" class="seemore">SEE MORE</a>
+            <a href="#service" class="seemore">SEE MORE</a>
           </div>
         </div>
       </div>
     </div>
     <div class="about">
-      <div class="pin_abo_pic"><img src="images/ab_02.png"></div>
-      <div class="pin_abo_pic2"><img src="images/ab_01.png"></div>
-      <div class="pin_abo_pic3"><img src="images/pen.svg"></div>
-      <div class="about-container-inner">
-        <div class="nav-col_about">
-          <h2>ABOUT</h2>
-          <div class="line_lun"><img src="images/linebk.png"></div>
-          <div class="about_font">Chun Mu international team adhere to tailored, showing a unique design. We are committed to the highest principles of "communication", "efficiency", "quality" and "service" in the face of customers and partners. If you have any questions please
-            contact us for further information.</div>
-          <a href="about.html" class="seemore">SEE MORE <i class="mdi mdi-arrow-right"></i></a>
+      <div class="about_skin">
+        <div class="pin_abo_pic"><img src="images/ab_02.png"></div>
+        <div class="pin_abo_pic2"><img src="images/ab_01.png"></div>
+        <div class="pin_abo_pic3"><img src="images/pen.svg"></div>
+        <div class="about-container-inner">
+          <div class="nav-col_about">
+            <h2>ABOUT</h2>
+            <div class="line_lun"><img src="images/linebk.png"></div>
+            <div class="about_font">Chun Mu international team adhere to tailored, showing a unique design. We are committed to the highest principles of "communication", "efficiency", "quality" and "service" in the face of customers and partners. If you have any questions please
+              contact us for further information.</div>
+            <a href="#about" class="seemore">SEE MORE <i class="mdi mdi-arrow-right"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -189,21 +196,9 @@
   <!--content-container end service-->
   <!--content-container start portfolio-->
   <div class="content-container c_portfolio">
-    <div class="portfolio_header">
-        <div class="menu_second">
-            <a href="nowte.html"><i class="mdi mdi-menu"></i> </a>
-        </div>
-        <div class="menu_second_close">
-            <a href="portfolio_item.html"><i class="mdi mdi-close"></i></a>
-        </div>
-        <div class="head_midden">
-            <a href="#" class="head_left"><i class="mdi mdi-chevron-left"></i></a>
-            <a href="#" class="head_right"><i class="mdi mdi-chevron-right"></i></a>
-        </div>
-    </div>
     <!--portfolio_list start-->
     <div class="portfolio_list">
-      <div class="container">
+      <div class="portfolio-list-container">
         <div class="user">
           <div class="userpic">
             <div class="desktop-pic"><img src="images/desktop.jpg"></div>
@@ -273,33 +268,14 @@
           <div class="item01"><img src="images/item02.jpg"></div>
           <div class="item01"><img src="images/item03.jpg"></div>
       </div>
-      <div class="protfolio_footer_bg">
-          <div class="nav_container">
-              <h3 class="white">FOLLOW & SHARE VALAIRE</h3>
-              <div class="center_aa">
-                  <a href="#" class="share_icon" target="_blank"><i class="mdi mdi-email-outline"></i></a>
-                  <a href="#" class="share_icon" target="_blank"><i class="mdi mdi-facebook"></i></a>
-                  <a href="#" class="share_icon" target="_blank"><i class="mdi mdi-vimeo"></i></a>
-              </div>
-          </div>
-      </div>
     </div>
     <!--portfolio_container end-->
   </div>
   <!--content-container end portfolio-->
   <!--content-container start showreel-->
-  <div class="content-container c_showreel">
-    <div class="portfolio_header">
-      <div class="menu_second">
-        <a href="nowte.html"><i class="mdi mdi-menu"></i></a>
-      </div>
-      <div class="menu_second_close">
-        <a href="index.html"><i class="mdi mdi-close"></i></a>
-      </div>
-    </div>
-
+  <div class="content-container c_showreel bgyellow">
     <div class="showreel_video">
-      <video preload="auto" id="bgvid" autoplay loop muted>
+      <video preload="auto" id="bgvid_1" autoplay loop muted>
                 <source src="images/robot.mp4" type="video/mp4">
               </video>
       <h4>Chun-mu Studio Showreel 2016</h4>
@@ -309,7 +285,7 @@
       <div class="nfc_continer">
         <div class="mov">
           <div class="left_vid">
-            <video preload="auto" id="bgvid" autoplay loop muted>
+            <video preload="auto" id="bgvid_2" autoplay loop muted>
                             <source src="images/studioshowreel.mp4" type="video/mp4">
                           </video>
           </div>
@@ -317,7 +293,7 @@
         </div>
         <div class="mov">
           <div class="left_vid">
-            <video preload="auto" id="bgvid" autoplay loop muted>
+            <video preload="auto" id="bgvid_3" autoplay loop muted>
                             <source src="images/robot.mp4" type="video/mp4">
                           </video>
           </div>
@@ -325,7 +301,7 @@
         </div>
         <div class="mov">
           <div class="left_vid">
-            <video preload="auto" id="bgvid" autoplay loop muted>
+            <video preload="auto" id="bgvid_4" autoplay loop muted>
                             <source src="images/robot.mp4" type="video/mp4">
                           </video>
           </div>
@@ -333,7 +309,7 @@
         </div>
         <div class="mov">
           <div class="left_vid">
-            <video preload="auto" id="bgvid" autoplay loop muted>
+            <video preload="auto" id="bgvid_5" autoplay loop muted>
                             <source src="images/robot.mp4" type="video/mp4">
                           </video>
           </div>
@@ -378,8 +354,8 @@
   </div>
   <!--main menu start-->
   <div class="fullpage mainmenu note_bg">
-    <div class="portfolio_header">
-      <div class="menu_second_close">
+    <div class="portfolio_header menu-header">
+      <div class="menu_close">
         <a><i class="mdi mdi-close"></i></a>
       </div>
       <div class="head_midden margintop">
@@ -389,10 +365,10 @@
     </div>
     <div class="nowt_midden">
       <div class="line_lun"><img src="images/linebk2.png"></div>
-      <a href="about.html" class="ew_btn">ABOUT</a>
-      <a href="service.html" class="ew_btn">SERVICE</a>
-      <a href="portfolio_item.html" class="ew_btn">PORTFOLIO</a>
-      <a href="showreel.html" class="ew_btn">SHOWREEL</a>
+      <a href="#about" class="ew_btn">ABOUT</a>
+      <a href="#service" class="ew_btn">SERVICE</a>
+      <a href="#portfolio" class="ew_btn">PORTFOLIO</a>
+      <a href="#showreel" class="ew_btn">SHOWREEL</a>
     </div>
 
     <div class="nav_container">
@@ -407,6 +383,17 @@
   </div>
   <!--main menu end-->
   <script type="text/javascript">
+  var pageName = "#index"
+  var h_cindex = $(".c_index").height()
+  var h_video = $(".topvideo").height()
+  var h_service = $(".service").height()
+    /*$(window).bind('beforeunload',function(){
+      return 'are you sure you want to leave?';
+    });
+    $( window ).on("unload",function(){
+      location.href = "index.html"
+    })*/
+
     $(window).on("load", function(e) {
       $('html, body').scrollTop(0);
       //TweenLite.defaultOverwrite = "all";
@@ -431,29 +418,54 @@
       $(".menu").click(function() {
         showMenu()
       })
-      $(".menu_second_close").click(function() {
+      $(".menu_second").click(function() {
+        showMenu()
+      })
+      $(".menu_close").click(function() {
         hideMenu()
       })
-      $(".changeLang").click(function() {
-        showMenu()
+      $(".menu_second_close").click(function() {
+        if(pageName=="#showreel"){
+          resetContent()
+          initIndex()
+        }
+
+      })
+      $(".ew_btn").click(function(){
+        hideMenu()
+        setTimeout(checkNowPage,800)
+      })
+      $("a.gowork").click(function(){
+        initPortfolio_page()
       })
 
       $("#menu1").click(function(){
-          resetContent()
-          $(".c_about").show()
+          if($(this).hasClass("on")){
+            return
+          }
+          resetMenu($(this))
+          goPageOut()
       })
       $("#menu2").click(function(){
-          resetContent()
-          $(".c_service").show()
+        if($(this).hasClass("on")){
+          return
+        }
+          resetMenu($(this))
+          goPageOut()
       })
       $("#menu3").click(function(){
-          resetContent()
-          $(".c_portfolio").show()
+        if($(this).hasClass("on")){
+          return
+        }
+          resetMenu($(this))
+          goPageOut()
       })
       $("#menu4").click(function(){
-          //resetContent()
-          //$(".c_showreel").show()
-          initShowReel()
+        if($(this).hasClass("on")){
+          return
+        }
+          resetMenu($(this))
+          goPageOut2()
       })
       $("#menu5").click(function(){
         $('html, body').animate({
@@ -463,20 +475,170 @@
           //window.location.hash = hash;
         });
       })
+      $(".changeLang").click(function() {
+        showMenu()
+      })
     }
 
-    function initShowReel(){
+
+    function goPageOut(){
+      var tl = new TimelineLite();
+      var vmask = $(".vmask")
+      var video = $(".topvideo")
+      var index = $(".c_index")
+      var about = $(".c_about")
+      var service = $(".c_service")
+      var showreel = $(".c_showreel")
+
+      switch(pageName){
+        case "#index":
+          $(".c_index").addClass("gohide")
+          tl.to(vmask,0.8,{height:h_video, ease: Power4.easeOut})
+            .to(video,0.6,{height:0, ease: Power4.easeIn},0.4)
+            .to(index,1.8,{height:0, ease: Power2.easeInOut, onComplete:goPageIn},0)
+        break
+        case "#about":
+          $(".c_about").addClass("gohide")
+          tl.to(vmask,0.8,{height:h_video, ease: Power4.easeOut})
+            .to(video,0.6,{height:0, ease: Power4.easeIn},0.4)
+            .to(about,1.8,{height:0, ease: Power2.easeInOut, onComplete:goPageIn},0)
+          break
+        case "#service":
+          tl.to(vmask,0.8,{height:h_video, ease: Power4.easeOut})
+            .to(video,0.6,{height:0, ease: Power4.easeIn},0.4)
+            .to(service,1.8,{height:0, ease: Power2.easeInOut, onComplete:goPageIn},0)
+          break
+        case "#showreel":
+          initShowReel()
+          break
+        case "#portfolio":
+          initPortfolio()
+          break
+        case "#portfolio_pgae":
+          break
+      }
+    }
+    function goPageOut2(){
+      var hh = $(window).height()/2
+      var ww = $(window).width()/100*9
+      var bh = hh+ww
+      var tl = new TimelineLite();
+      var blacktop = $(".mask-block.mtop .fillblock")
+      var blackbot = $(".mask-block.mbot .fillblock")
+      console.log("bh:"+bh)
+      tl.to(blacktop,0.8,{top:0, ease: Power4.easeIn},0)
+        .to(blackbot,0.8,{bottom:0, ease: Power4.easeIn, onComplete:goPageIn},0)
+
+    }
+    function goPageIn(){
+      $(".content-container").removeClass("gohide")
+      //$(".mask-block.mtop .fillblock").hide()
+      //$(".mask-block.mbot .fillblock").hide()
+      pageName = checkNowPage()
+      console.log("goPageIn pageName:"+pageName)
+      switch(pageName){
+        case "#index":
+          initIndex()
+        break
+        case "#about":
+          initAbout()
+        break
+        case "#service":
+          initService()
+        break
+        case "#portflio":
+          initPortfolio()
+        break
+        case "#showreel":
+          initShowReel()
+        break
+      }
+    }
+    function initIndex(){
+      var tl = new TimelineLite();
+      var about = $(".about_skin")
+      var vmask = $(".vmask")
+      var video = $(".topvideo")
+      var service = $(".service")
+        var ww = $(window).width()
+      if (ww >= 1097) {
+        tl.to(about,0,{top:0,opacity:1, ease: Power4.easeOut},0)
+          .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},0.3)
+          .to(vmask, 0.5, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 0.8)
+          .to(service, 0.8, {height: h_service,ease: Back.easeOut.config(2.5)}, 1.5)
+          .from(logo, 0.8, {top: -300, ease: Back.easeOut.config(2.5)}, 0.3)
+          .from(am3, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.4)
+          .from(am2, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.5)
+          .from(am1, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.6)
+          .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 0.7)
+      } else {
+        console.log("t1_2")
+          tl.to(about,1,{top:0,opacity:1, ease: Power4.easeOut},0)
+            .to(service, 0.8, {height: h_service,ease: Back.easeOut.config(2.5)}, 0.3)
+            .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},1)
+            .to(vmask, 0.8, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 1.5)
+      }
+    }
+    function initAbout(){
+      console.log("initAbout")
       resetContent()
-      $(".menu").slideup()
-      $(".header").slideUp()
-      $(".topvideo").slideUp()
-      $(".c_showreel").show()
+      var about = $(".c_about")
+      var vmask = $(".vmask")
+      var video = $(".topvideo")
+      var tl = new TimelineLite();
+      $(".c_about").show()
+      var h_about = $(".c_about").height()
+      $(".c_about").css("height",0)
+      $(".vmask").css("height",h_video)
+      tl.to(video,1, {height: h_video, ease: Power4.easeOut})
+        .to(vmask, 0.5, {height: 0,ease: Power4.easeOut}, 0.7)
+        .to(about,1,{height:h_about, ease: Power4.easeInOut},1)
     }
+    function initService(){
+      console.log("initService")
+      resetContent()
+      var service = $(".c_service")
+      var vmask = $(".vmask")
+      var video = $(".topvideo")
+      var tl = new TimelineLite();
+      $(".c_service").show()
+      var h_service = $(".c_service").height()
+      $(".c_service").css("height",0)
+      $(".c_service").css("overflow","hidden")
+      $(".vmask").css("height",h_video)
+      tl.to(video,1, {height: h_video, ease: Power4.easeOut})
+        .to(vmask, 0.5, {height: 0,ease: Power4.easeOut}, 0.7)
+        .to(service,1,{height:h_service, ease: Power4.easeInOut},1)
+    }
+    function initPortfolio(){
+      console.log("initPortfolio")
+      resetContent()
+      showPortfolioTop()
+      $(".portfolio_list").show()
+      $(".portfolio_container").hide()
+      $(".head_midden").hide()
+      $(".c_portfolio").show()
+
+    }
+    function initPortfolio_page(){
+      $(".head_midden").show()
+      $(".portfolio_list").hide()
+      $(".portfolio_container").show()
 
 
-
-
-
+    }
+    function initShowReel(){
+      var hh = $(window).height()/2
+      var ww = $(window).width()/100*9
+      var bh = hh+ww
+      console.log("initShowReel")
+      resetContent()
+      showPortfolioTop()
+      $(".head_midden").hide()
+      $(".c_showreel").show()
+      //$(".mask-block.mtop .fillblock").css("top",bh)
+      //$(".mask-block.mbot .fillblock").css("bottom",bh)
+    }
     function loadFinish() {
       var line = $(".loading-line")
       var loading = $(".loading-container")
@@ -494,13 +656,19 @@
       unFreeze()
       LoadingOut()
     }
+    function hideLoadmask(){
+      $(".loading-container").hide()
+    }
 
     function LoadingOut() {
       console.log("LoadingOut")
       var tl = new TimelineLite();
       var loading = $(".loading-container")
       var logo = $(".logo")
+      var about = $(".about_skin")
       var vmask = $(".vmask")
+      var video = $(".topvideo")
+      var service = $(".service")
       var am1 = $(".am1"),
         am2 = $(".am2"),
         am3 = $(".am3"),
@@ -513,171 +681,52 @@
       var hh = $(window).height()
       var vwpc = ww / 100
       var h_header = $(".header").height()
-      var h_video = $(".video").height()
+
       console.log("h_header:" + h_header)
       console.log("h_video:" + h_video)
       var fh1 = h_header - vwpc * 9
       var fh2 = fh1 + h_video
-      var fh3 = hh
+      var fh3 = hh+h_service
       //var fh1 = headerh+vwpc*16.5
-      if (ww >= 1240) {
+      $(".service").css("height",0)
+      $(".topvideo").css("height",0)
+      $(".about_skin").css("opacity",0)
+      $(".about_skin").css("top",-100)
+      hideLoadmask()
+      if (ww >= 1097) {
         console.log("t1_1")
-        tl.to(loading, 1, {
-            top: fh1,
-            ease: Power4.easeOut
-          })
-          .from(logo, 0.8, {
-            top: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.8")
-          .from(am3, 1, {
-            top: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.76")
-          .from(am2, 1, {
-            top: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.73")
-          .from(am1, 1, {
-            top: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.70")
-          .from(hem, 1, {
-            left: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.67")
-          .to(loading, 1, {
-            top: fh2,
-            ease: Power4.easeOut
-          }, "-=0.64")
-          .to(vmask, 0.5, {
-            height: 0,
-            ease: Power4.easeOut,
-            onComplete: unFreeze
-          }, "-=0.3")
-          .to(loading, 1, {
-            top: fh3,
-            autoAlpha: 0,
-            ease: Power4.easeOut
-          })
-      } else if (ww >= 1096) {
-        console.log("t1_2")
-        tl.to(loading, 1, {
-            top: fh1,
-            ease: Power4.easeOut
-          })
-          .from(logo, 0.8, {
-            top: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.8")
-          .from(hem, 1, {
-            left: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.67")
-          .to(loading, 1, {
-            top: fh2,
-            ease: Power4.easeOut
-          }, "-=0.64")
-          .to(vmask, 0.5, {
-            height: 0,
-            ease: Power4.easeOut,
-            onComplete: unFreeze
-          }, "-=0.3")
-          .to(loading, 1, {
-            top: fh3,
-            autoAlpha: 0,
-            ease: Power4.easeOut
-          })
+        /*tl.to(loading, 1, {top: fh1, ease: Power4.easeOut})
+          .from(logo, 0.8, {top: -300, ease: Back.easeOut.config(1.5)}, 0.3)
+          .from(am3, 0.8, {top: -200,ease: Back.easeOut.config(1.5)}, 0.5)
+          .from(am2, 0.8, {top: -200,ease: Back.easeOut.config(1.5)}, 0.6)
+          .from(am1, 0.8, {top: -200,ease: Back.easeOut.config(1.5)}, 0.7)
+          .from(hem, 1, {left: -200,ease: Back.easeOut.config(1.5)}, 0.8)
+          .to(loading, 1, {top: fh2,ease: Power4.easeOut}, 0.7)
+          .to(vmask, 0.8, {height: 0,ease: Power4.easeOut,onComplete: unFreeze}, 1)
+          .to(loading, 1, {top: fh3,ease: Power4.easeOut,onComplete: hideLoadmask},1.8)*/
+          tl.to(about,0,{top:0,opacity:1, ease: Power4.easeOut},0)
+            .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},0.3)
+            .to(vmask, 0.5, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 0.8)
+            .to(service, 0.8, {height: h_service,ease: Back.easeOut.config(2.5)}, 1.5)
+            .from(logo, 0.8, {top: -300, ease: Back.easeOut.config(2.5)}, 0.3)
+            .from(am3, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.4)
+            .from(am2, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.5)
+            .from(am1, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.6)
+            .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 0.7)
+
       } else {
-        console.log("t1_3")
-        tl.to(loading, 1, {
-            top: fh1,
-            ease: Power4.easeOut
-          })
-          .from(logo, 0.8, {
-            top: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.8")
-          .from(home_btn, 1, {
-            right: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.67")
-          .from(hem, 1, {
-            left: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=1.67")
-          .to(loading, 1, {
-            top: fh2,
-            ease: Power4.easeOut
-          }, "-=0.64")
-          .to(vmask, 0.5, {
-            height: 0,
-            ease: Power4.easeOut,
-            onComplete: unFreeze
-          }, "-=0.3")
-          .to(loading, 1, {
-            top: fh3,
-            autoAlpha: 0,
-            ease: Power4.easeOut
-          })
+        console.log("t1_2")
+          tl.to(about,1,{top:0,opacity:1, ease: Power4.easeOut},0)
+            .to(service, 0.8, {height: h_service,ease: Back.easeOut.config(2.5)}, 0.3)
+            .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},1)
+            .to(vmask, 0.8, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 1.5)
+            .from(logo, 0.8, {top: -300, ease: Back.easeOut.config(2.5)}, 0.3)
+            .from(home_btn, 0.8, {right: -200,ease: Back.easeOut.config(1)}, 0.5)
+            .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 0.5)
       }
-
-
     }
 
-    function showMenu() {
-      var ww = $(window).width()
-      var hh = $(window).height()
-      var tl = new TimelineLite();
-      var langtop = $(".head_midden")
-      var menubody = $(".nowt_midden")
-      var menunav = $(".nav_container")
-      var menuclose = $(".menu_second_close")
-      TweenLite.set(menubody,{skewY:-10, opacity:1})
-      TweenLite.to(menubody,0.5,{delay:0.5,skewY:0})
-      TweenLite.to(menuclose,2,{rotationY:360})
-      TweenLite.set(menunav,{bottom:-300,opacity:1})
-      TweenLite.set(langtop,{bottom:-100,opacity:1})
-      tl.from(langtop, 1, {top:-100, opacity:1, ease:Back.easeOut.config(1)})
-        .from(menubody, 1, {top:hh, opacity:1, ease:Back.easeOut.config(1)},0.2)
-        .to(menunav, 1, {bottom:0, opacity:1, ease:Back.easeOut.config(1)},0.6)
-        .to(menuclose, 1, {right:0, opacity:1, ease:Back.easeOut.config(1)},0.6)
 
-      $(".mainmenu").slideDown(400)
-    }
-
-    function hideMenu() {
-      var ww = $(window).width()
-      var hh = $(window).height()
-      var tl = new TimelineLite();
-      var langtop = $(".head_midden")
-      var menubody = $(".nowt_midden")
-      var menunav = $(".nav_container")
-      var menuclose = $(".menu_second_close")
-
-      tl.to(langtop, 0.5, {opacity:0,ease:Power4.easeOut})
-        .to(menubody, 0.5, {opacity:0,ease:Power4.easeOut},0.2)
-        .to(menunav, 0.5, {opacity:0,ease:Power4.easeOut},0.4)
-        .to(menuclose, 0.5, {right:-100,ease:Power4.easeOut},0)
-      $(".mainmenu").slideUp(1000, function() {
-        var tl = new TimelineLite();
-        var hem = $(".hem"),
-          home_btn = $(".home_btn")
-        tl.from(hem, 0.5, {
-            left: -200,
-            ease: Back.easeOut.config(1)
-          })
-          .from(home_btn, 0.5, {
-            right: -200,
-            ease: Back.easeOut.config(1)
-          }, "-=0.5")
-
-      })
-    }
-
-    function unFreeze() {
-      $("body").removeClass("onloading")
-    }
   </script>
 </body>
 

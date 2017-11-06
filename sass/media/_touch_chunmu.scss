@@ -28,7 +28,7 @@
         font-size: 3em;
     }
     .right_btn, .left_btn{
-        display: none;
+        display: block;
     }
 }
 @include respond-pad {
@@ -135,11 +135,15 @@
         top: 650px;
         right: 285px;
     }
+    .home_btn{
+      font-size:0.8em;
+      letter-spacing: .2em;
+    }
 }
 @include respond-mobile {
     .video{
         height: 15em;
-        min-height: 17em;
+        //min-height: 17em;
         video{
             margin-top: -207px;
             width: 150%;

@@ -1,4 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
+html{
+  background: #131313;
+}
 body{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
@@ -50,7 +53,7 @@ body{
     max-width: 96em;
     margin: 0 auto;
     transform: skewY(10deg);
-    top: 212px;
+    top: 15em;
     a{
         color:#000;
         &:hover{
@@ -64,7 +67,8 @@ body{
 .video{
     width: 100%;
     height: 36em;
-    min-height: 30em;
+    margin-top: -1px;
+    //min-height: 30em;
     background-color: #ff7be9;
     transform: skewY(-10deg);
     transform-origin: 0 0;
@@ -101,8 +105,8 @@ body{
     width: 100%;
     height: 40em;
     background-color: #303030;
-    transform: skewY(-10deg);
-    transform-origin: 0 0;
+    //transform: skewY(-10deg);
+    //transform-origin: 0 0;
     background-image: url("../images/bgvi.svg");
     overflow: hidden;
 }
@@ -118,8 +122,8 @@ body{
 }
 .medser {
     width: 100%;
-    transform: skewY(-10deg);
-    transform-origin: 0 0;
+    //transform: skewY(-10deg);
+    //transform-origin: 0 0;
     box-sizing: border-box;
     overflow: hidden;
     display: inline-block;
@@ -152,15 +156,19 @@ body{
     background-color: #ffc600;
     width: 100%;
     height: 50em;
-    transform: skewY(-10deg);
-    transform-origin: 0 0;
+    //transform: skewY(-10deg);
+    //transform-origin: 0 0;
+    .about_skin{
+      position: relative;
+      top:0;
+    }
 }
 .about2{
     background-color: #ffc600;
     width: 100%;
     height: 60em;
-    transform: skewY(-10deg);
-    transform-origin: 0 0;
+    //transform: skewY(-10deg);
+    //transform-origin: 0 0;
 }
 .pin_abo_pic{
     position: absolute;
@@ -245,6 +253,12 @@ body{
     top: 0;
     width: 43%;
     max-width: 39.5em;
+    a{
+      &.on{
+        color:#ff7be9;
+      }
+    }
+
 }
 .right_btn{
     left: 0;
@@ -518,7 +532,7 @@ body{
         }
     }
 }
-.menu_second_close{
+.menu_close, .menu_second_close{
     float: right;
     margin: 12px 20px 0  0;
     position: relative;
@@ -597,6 +611,7 @@ body{
 }
 .bgyellow{
     background-color: #ffd749!important;
+    overflow:auto;
 }
 .head_midden{
     width: 92px;
@@ -882,9 +897,64 @@ a{
 
   }
 }
+.mask-container{
+  pointer-events: none;
+  width: 100vw;
+  height:150vh;
+  top:-8.8vw;
+  position: fixed;
+  z-index:1990;
+  transform: skewY(-10deg);
+  .mask-block{
+    width: 100vw;
+    //background: #131313;
+    position: absolute;
+    height: calc( 50vh + 8.9vw);
+    overflow: hidden;
+    &.mtop{
+      .fillblock{
+        top: calc( 50vh + 8.9vw );
+      }
+    }
+    &.mbot{
+      bottom:8.9vw;
+      .fillblock{
+        bottom: calc( 50vh + 8.9vw );
+      }
+    }
+
+    .fillblock{
+      width: 100vw;
+      background: #131313;
+      height: calc( 50vh + 8.9vw);
+      position: absolute;
+
+    }
+  }
+}
 
 .fullpage{
   width: 100vw;
   height:100vh;
   position: fixed;
+}
+
+.content-container{
+  margin-top: -1px;
+  &.gohide{
+    overflow: hidden;
+  }
+}
+
+.c_index,.c_about,.c_service{
+  transform: skewY(-10deg);
+  transform-origin: 0 0;
+  position: relative;
+  top:0;
+}
+
+.c_showreel{
+  position: relative;
+  top:0;
+  z-index: 1999;
 }

@@ -3,6 +3,7 @@
 function checkNowPage(){
   var hash = window.location.hash
   console.log("hash:"+hash)
+  return hash
 }
 
 function showMenu() {
@@ -55,9 +56,12 @@ function hideMenu() {
 
   })
 }
-
+function goFreeze(){
+  $("body").addClass("onloading")
+}
 function unFreeze() {
   $("body").removeClass("onloading")
+  $('html, body').scrollTop(0);
 }
 
 function resetPageView() {
@@ -86,4 +90,11 @@ function hidePortfolioTop(){
   $(".topvideo").slideDown()
   $(".header").slideDown()
   $(".menu").slideDown()
+}
+
+function resetMenu(obj){
+  for(var i=1;i<=4;i++){
+    $("#menu"+i).removeClass("on")
+  }
+  obj.addClass("on")
 }
