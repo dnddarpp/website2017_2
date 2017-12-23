@@ -63,7 +63,6 @@ $(function(){
 		var ary = portfolio[i]
 		var typepic = typeimg[ary[2]]
 		$(".works").append('<div class="work">' +
-											'<a class="gowork" href="#job'+i+'">' +
 											'<div class="pic"><img src="images/day'+i+'.jpg"></div>' +
 											'<div class="day">' +
 											'<p><img src="images/'+typepic+'" style=""></p>' +
@@ -77,7 +76,7 @@ $(function(){
 											'<div></div>' +
 											'</div>' +
 											'</div>' +
-											'</a></div>');
+											'</div>');
 
 	}
 	//設定大圖
@@ -90,18 +89,35 @@ $(function(){
 	$(".userpic .work_title .p1").html(bigtitle)
 	$(".userpic .work_title .p2").html(bigsubtitle)
 
-	$(".pic img").on("load", function(){
-			//console.log($(this).attr("src"));
-			//console.log($($(this).parent()).attr('class'));
+	$(".pic img").load(function(){
+			console.log($(this).attr("src"));
+			console.log($($(this).parent()).attr('class'));
 			//console.log($(this).parent.attr('class'));
 
 			$(this).show();
 			$(this).parent().parent().find(".loader").hide();
 	});
 
-	$(".pic img").on("error", function(){
+	$(".pic img").error(function(){
 			$(this).parent().parent().hide();
 
 	});
+
+		$.ajax({url:"links.txt",
+				type: "GET",
+				data: {},
+				cached: false,
+				dataType: "json",
+				success: function(data){
+						// console.log(data);
+						$(".user .links .facebook").append("<a href='" + data.facebook + "' target='blank'><i class='mdi mdi-facebook-box'></i></a>")
+						$(".user .links .website").append("<a href='" + data.website + "' target='blank'><i class='mdi mdi-web'></i></a>")
+						$(".user .links .dribbble").append("<a href='" + data.dribbble + "' target='blank'><i class='mdi mdi-dribbble-box'></i></a>")
+						$(".user .links .twitter").append("<a href='" + data.twitter + "' target='blank'><i class='mdi mdi-twitter-box'></i></a>")
+						$(".user .links .behance").append("<a href='" + data.behance + "' target='blank'><i class='mdi mdi-behance'></i></a>")
+						$(".user .links .linkedin").append("<a href='" + data.linkedin + "' target='blank'><i class='mdi mdi-linkedin-box'></i></a>")
+					}
+				});
+
 
 })

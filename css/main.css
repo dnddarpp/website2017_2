@@ -178,7 +178,7 @@ body.onloading {
   width: 100%;
   height: 36em;
   margin-top: -1px;
-  background-color: #ff7be9;
+  background-color: #16ffbd;
   transform: skewY(-10deg);
   transform-origin: 0 0;
   overflow: hidden;
@@ -188,8 +188,19 @@ body.onloading {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #ff7be9;
+  background-color: #16ffbd;
   z-index: 2;
+}
+.video .vpic {
+  width: 100%;
+  height: 300%;
+  background: url("../images/CM_BG.jpg") center repeat;
+  background-size: 640px auto;
+  position: absolute;
+  top: -10vw;
+  left: 0;
+  transform: skewY(10deg);
+  pointer-events: none;
 }
 .video video {
   width: 120%;
@@ -279,6 +290,7 @@ body.onloading {
   background-color: #ffc600;
   width: 100%;
   height: 60em;
+  position: relative;
 }
 
 .pin_abo_pic {
@@ -359,12 +371,11 @@ body.onloading {
 .logo {
   display: block;
   margin: 0 auto;
-  width: 120px;
+  width: 240px;
   height: auto;
   z-index: 0;
   position: relative;
-  top: 0;
-  transform: skewY(-5deg);
+  top: -20px;
 }
 .logo img {
   width: 100%;
@@ -1040,6 +1051,18 @@ a {
   bottom: 0;
 }
 
+.logoanim {
+  position: absolute;
+  top: calc( 50vh - 180px );
+  left: calc( 50vw - 128px );
+  text-align: center;
+  z-index: 3003;
+  width: 240px;
+}
+.logoanim img {
+  width: 100%;
+}
+
 .mask-container {
   pointer-events: none;
   width: 100vw;
@@ -1052,22 +1075,22 @@ a {
 .mask-container .mask-block {
   width: 100vw;
   position: absolute;
-  height: calc( 50vh + 8.9vw);
+  height: calc( 50vh + 9.7vw);
   overflow: hidden;
 }
 .mask-container .mask-block.mtop .fillblock {
-  top: calc( 50vh + 8.9vw );
+  top: calc( 50vh + 9.7vw );
 }
 .mask-container .mask-block.mbot {
   bottom: 8.9vw;
 }
 .mask-container .mask-block.mbot .fillblock {
-  bottom: calc( 50vh + 8.9vw );
+  bottom: calc( 50vh + 9.7vw );
 }
 .mask-container .mask-block .fillblock {
   width: 100vw;
   background: #131313;
-  height: calc( 50vh + 8.9vw);
+  height: calc( 50vh + 9.7vw);
   position: absolute;
 }
 
@@ -1091,10 +1114,9 @@ a {
   top: 0;
 }
 
-.c_showreel {
+.c_showreel, .c_portfolio {
   position: relative;
   top: 0;
-  z-index: 1999;
 }
 
 @media only screen and (min-width: 1240px) {

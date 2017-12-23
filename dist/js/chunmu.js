@@ -1,4 +1,4 @@
-
+var init=false
 
 function checkNowPage(){
   var hash = window.location.hash
@@ -56,12 +56,24 @@ function hideMenu() {
 
   })
 }
+
+function hideOut2Mask(){
+  var hh = $(window).height()/2
+  var ww = $(window).width()/100*10
+  var bh = hh+ww
+  var blacktop = $(".mask-block.mtop .fillblock")
+  var blackbot = $(".mask-block.mbot .fillblock")
+  blacktop.css("top",bh)
+  blackbot.css("bottom",bh)
+}
 function goFreeze(){
   $("body").addClass("onloading")
 }
 function unFreeze() {
   $("body").removeClass("onloading")
   $('html, body').scrollTop(0);
+  $(".logo img").attr("src","images/CM_icon05.png")
+  $(".logoanim").hide()
 }
 
 function resetPageView() {
@@ -73,12 +85,17 @@ function resetPageView() {
 }
 function resetContent(){
   hidePortfolioTop()
+  $("#bgvid").show()
+  $("#bgvid2").hide()
+  $(".vpic").hide()
+  $("video").show()
+  $(".viedo_play").show()
   $(".content-container").hide()
 }
 function showPortfolioTop(){
   $(".content-header").slideDown()
   $(".topvideo").slideUp()
-  $(".header").slideUp()
+  $(".header").hide()
   $(".menu").slideUp()
   TweenLite.set($(".menu_second_close"),{right:-50, opacity:1})
   TweenLite.to($(".menu_second_close"),1,{right:0, opacity:1, ease:Back.easeOut.config(2), overwrite: true})
@@ -90,6 +107,12 @@ function hidePortfolioTop(){
   $(".topvideo").slideDown()
   $(".header").slideDown()
   $(".menu").slideDown()
+}
+
+function setSimplePage(){
+  console.log("setSimplePage")
+  resetContent()
+  $(".topvideo").css("height",0)
 }
 
 function resetMenu(obj){

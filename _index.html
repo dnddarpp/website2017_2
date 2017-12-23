@@ -22,15 +22,6 @@
   <title></title>
   <script type="text/javascript">
     resetPageView()
-  /*  var piclink = "images/jpg/ECOVE_" + picname + ".jpg"
-            //ary.push(piclink)
-            $.ajax({
-                url: piclink,
-                success: function() {
-                    count++
-                    console.log("pic count:" + count)
-                }
-            });*/
   </script>
 </head>
 
@@ -85,13 +76,9 @@
     </div>
     <div class="vpic"></div>
     <video autoplay loop poster="polina.jpg" id="bgvid" autoplay loop muted>
-      <source class="v1" src="images/robot.mp4" type="video/mp4">
-      <source class="v2" src="images/robot.webm" type="video/webm">
-    </video>
-    <video autoplay loop poster="polina.jpg" id="bgvid2" autoplay loop muted>
-      <source class="v3" src="images/robot2.mp4" type="video/mp4">
-      <source class="v4" src="images/robot2.webm" type="video/webm">
-    </video>
+          <source src="robot.webm" type="video/webm">
+          <source src="images/robot.mp4" type="video/mp4">
+        </video>
   </div>
   <!--video end-->
   <!--content-container start index-->
@@ -415,7 +402,6 @@
     var home_btn = $(".home_btn")
     var blacktop = $(".mask-block.mtop .fillblock")
     var blackbot = $(".mask-block.mbot .fillblock")
-    var tm1
     $(window).on('hashchange', function(e){
         var hash = location.hash
         console.log("hashchange hash:"+hash)
@@ -548,7 +534,6 @@
 
 
     function goPageOut(){
-      TweenMax.killAll();
       var tl = new TimelineLite();
       var vmask = $(".vmask")
       var video = $(".topvideo")
@@ -668,33 +653,14 @@
       var about = $(".c_about")
       var vmask = $(".vmask")
       var video = $(".topvideo")
-      $(".vpic").show()
-      $("video").hide()
-      $(".viedo_play").hide()
       var tl = new TimelineLite();
-
       about.show()
       about.css("height",0)
       about.css("overflow","hidden")
       vmask.css("height",h_video)
-      tl.to(video,1, {height: h_video/2, ease: Power4.easeOut})
+      tl.to(video,1, {height: h_video, ease: Power4.easeOut})
         .to(vmask, 0.5, {height: 0,ease: Power4.easeOut}, 0.7)
         .to(about,1,{height:h_about, ease: Power4.easeInOut},1)
-
-      if (document.all && window.atob) {
-        // Firefox breaks with 'background-position'
-        // IE10 breaks with 'backgroundPosition'
-        // bodge to workaround
-        tm1 = TweenMax.fromTo($('.vpic'), 60,
-          {css:{'background-position': "0px 0px"}},
-          {css:{'background-position': "1280px 788px"}, repeat: -1, delay:0, repeatDelay: 0, ease: Linear.easeNone }
-        );
-      } else {
-        tm1 = TweenMax.fromTo($('.vpic'), 60,
-          {css:{backgroundPosition:  "0px 0px"}},
-          {css:{backgroundPosition:  "1280px 788px"}, repeat: -1, delay:0, repeatDelay: 0, ease: Linear.easeNone }
-        );
-      }
     }
     function initService(){
       console.log("initService")
@@ -703,9 +669,6 @@
       var service = $(".c_service")
       var vmask = $(".vmask")
       var video = $(".topvideo")
-      $("#bgvid").hide()
-      $("#bgvid2").show()
-      $(".viedo_play").hide()
       var tl = new TimelineLite();
       $(".c_service").show()
       $(".c_service").css("height",0)
@@ -737,7 +700,7 @@
       console.log("initShowReel")
       setSimplePage()
       showPortfolioTop()
-      $(".head_midden").hide()
+      $(".head_midden").hidden()
       //resetContent()
       var showreel = $(".c_showreel")
       showreel.show()
@@ -799,8 +762,6 @@
       $(".topvideo").css("height",0)
       $(".about_skin").css("opacity",0)
       $(".about_skin").css("top",-100)
-      $("#bgvid").show()
-      $("#bgvid2").hide()
       //hideLoadmask()
       if (ww >= 1097) {
         console.log("t1_1")
@@ -810,8 +771,8 @@
             .to(logoanim,1, {top: tt0, ease: Power4.easeInOut,onComplete: unFreeze},1.5)
             .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},2.5)
             .to(about,0.5,{top:0,height:h_about,opacity:1, ease: Power4.easeOut},2.7)
-            .to(vmask, 0.5, {height: 0,ease: Power4.easeIn}, 3.0)
-            .to(service, 0.8, {opacity:1, height: h_service,ease: Back.easeOut.config(2.5)}, 3.7)
+            .to(vmask, 0.5, {height: 0,ease: Power4.easeIn}, 3.3)
+            .to(service, 0.8, {opacity:1, height: h_service,ease: Back.easeOut.config(2.5)}, 4)
             .from(am3, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 2.6)
             .from(am2, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 2.7)
             .from(am1, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 2.8)

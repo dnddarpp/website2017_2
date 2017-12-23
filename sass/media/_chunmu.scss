@@ -8,9 +8,15 @@ body{
     line-height: 1.42857143;
     color: #333;
     background-color: #000!important;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
 
     &.onloading{
-      overflow: hidden;
+      //overflow: hidden;
+      height:100vh;
+      position: fixed;
+      overflow-y: scroll;
+
     }
 }
 .menu{
@@ -69,7 +75,7 @@ body{
     height: 36em;
     margin-top: -1px;
     //min-height: 30em;
-    background-color: #ff7be9;
+    background-color: #16ffbd;
     transform: skewY(-10deg);
     transform-origin: 0 0;
     overflow: hidden;
@@ -79,8 +85,20 @@ body{
       top:0;
       width: 100%;
       height:100%;
-      background-color: #ff7be9;
+      background-color: #16ffbd;
       z-index: 2;
+    }
+    .vpic{
+      width: 100%;
+      height:300%;
+      background: url("../images/CM_BG.jpg") center repeat;
+      background-size: 640px auto;
+      position: absolute;
+      top: -10vw;
+      left:0;
+      transform: skewY(10deg);
+      pointer-events: none;
+
     }
     video{
         // margin-top: -214px;
@@ -167,6 +185,7 @@ body{
     background-color: #ffc600;
     width: 100%;
     height: 60em;
+    position: relative;
     //transform: skewY(-10deg);
     //transform-origin: 0 0;
 }
@@ -238,12 +257,12 @@ body{
 .logo{
     display: block;
     margin: 0 auto;
-    width: 120px;
+    width: 240px;
     height: auto;
     z-index: 0;
     position: relative;
-    top:0;
-    transform: skewY(-5deg);
+    top:-40px;
+    //transform: skewY(-5deg);
     img{
         width: 100%;
     }
@@ -894,7 +913,17 @@ a{
     width:0vw;
     z-index:3002;
     bottom: 0;
-
+  }
+}
+.logoanim{
+  position:absolute;
+  top: calc( 50vh - 180px );
+  left:calc( 50vw - 128px );
+  text-align: center;
+  z-index: 3003;
+  width: 240px;
+  img{
+    width: 100%;
   }
 }
 .mask-container{
@@ -909,24 +938,24 @@ a{
     width: 100vw;
     //background: #131313;
     position: absolute;
-    height: calc( 50vh + 8.9vw);
+    height: calc( 50vh + 9.7vw);
     overflow: hidden;
     &.mtop{
       .fillblock{
-        top: calc( 50vh + 8.9vw );
+        top: calc( 50vh + 9.7vw );
       }
     }
     &.mbot{
       bottom:8.9vw;
       .fillblock{
-        bottom: calc( 50vh + 8.9vw );
+        bottom: calc( 50vh + 9.7vw );
       }
     }
 
     .fillblock{
       width: 100vw;
       background: #131313;
-      height: calc( 50vh + 8.9vw);
+      height: calc( 50vh + 9.7vw);
       position: absolute;
 
     }
@@ -953,8 +982,12 @@ a{
   top:0;
 }
 
-.c_showreel, .c_portfolio{
+.c_showreel{
   position: relative;
   top:0;
-  z-index: 1999;
+  //z-index: 1999;
+}
+.c_portfolio{
+  position: relative;
+  top:0;
 }
