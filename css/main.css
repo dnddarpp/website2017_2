@@ -117,9 +117,13 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #000 !important;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: visible;
 }
 body.onloading {
-  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  overflow-y: visible;
 }
 
 .menu {
@@ -375,7 +379,7 @@ body.onloading {
   height: auto;
   z-index: 0;
   position: relative;
-  top: -20px;
+  top: -40px;
 }
 .logo img {
   width: 100%;
@@ -1114,7 +1118,12 @@ a {
   top: 0;
 }
 
-.c_showreel, .c_portfolio {
+.c_showreel {
+  position: relative;
+  top: 0;
+}
+
+.c_portfolio {
   position: relative;
   top: 0;
 }
@@ -1161,6 +1170,9 @@ a {
   .video video {
     margin-top: -190px;
     width: 150%;
+  }
+  .video .vpic {
+    background-size: 320px auto;
   }
 
   .service {
@@ -1297,6 +1309,7 @@ a {
 
   .logo {
     width: 90px;
+    top: 0px;
   }
 
   .home_btn {

@@ -1,9 +1,9 @@
 <?php
 $dir    = 'images';
-$files1 = scandir($dir);
-$files2 = scandir($dir, 1);
-
-print_r($files1);
+$files1 = scandir($dir,1);
+array_pop($files1);
+array_pop($files1);
+$js_array = json_encode($files1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,43 +28,62 @@ print_r($files1);
   <script src="dist/js/portfolio_data.js"></script>
   <title></title>
   <script type="text/javascript">
+    var ary_loading_file = <?=$js_array?>;
+    var mytimer
+    var max = ary_loading_file.length;
+    var ww = $(window).width()
+
+    console.log("max:"+max)
+    var count = 0
     resetPageView()
-    var ary_loading_img = ["2logo.png",
-  "ab_01.png",
-  "ab_02.png",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  "",
-  ]
-    var ary_loading_movie=["studioshowreel.mp4",""]
-    /*for(var i=0;i<ary_loading_img.length;i++){
-      piclink = ary_loading_img[i]
+
+    for(var i=0;i<ary_loading_file.length;i++){
+      piclink = "images/"+ary_loading_file[i]
       $.ajax({
           url: piclink,
           success: function() {
               count++
-              console.log("pic count:" + count)
+              ww = $(window).width()
+              var pc = Math.round(count/max*100)/100
+              console.log("pc:"+pc)
+              var linew = Math.round(ww*pc)
+              var line = $(".loading-line")
+              TweenLite.to(line, 1, { width: linew })
+              if(pc>=100){
+                loadFinish()
+              }
+              //console.log("linew:"+linew)
+              //console.log(" count:" + count)
           }
       });
-    }*/
-    $.ajax({
-      url: "YOUR FOLDER",
-      success: function(data){
-         $(data).find("a:contains(.jpg)").each(function(){
-            // will loop through
-            var images = $(this).attr("href");
-
-            $('<p></p>').html(images).appendTo('a div of your choice')
-
-         });
-      }
-    });
-
+    }
+    stopInterval()
+    $(document).ready(function() {
+        stopInterval()
+        //console.log("ready count:" + count)
+        //若網頁已LOAD完但圖片或音檔還沒LOADING完，先卡住，直到LOADING完成
+        if (count < max) {
+            startCheck()
+        } else {
+          console.log("all ready");
+        }
+    })
+    function stopInterval() {
+        clearInterval(mytimer);
+        timerun = false
+    }
+    function checkReady() {
+        console.log("count:" + count + " max:" + max)
+        if (count >= max) {
+            stopInterval()
+            //goAnim()
+            loadFinish()
+            console.log("ready")
+        }
+    }
+    function startCheck() {
+        mytimer = setInterval(checkReady, 100);
+    }
   </script>
 </head>
 
@@ -118,11 +137,11 @@ print_r($files1);
       <img src="images/play.png">
     </div>
     <div class="vpic"></div>
-    <video autoplay loop poster="polina.jpg" id="bgvid" autoplay loop muted>
+    <video autoplay loop poster="images/2logo.png" id="bgvid" autoplay loop muted>
       <source class="v1" src="images/robot.mp4" type="video/mp4">
       <source class="v2" src="images/robot.webm" type="video/webm">
     </video>
-    <video autoplay loop poster="polina.jpg" id="bgvid2" autoplay loop muted>
+    <video autoplay loop poster="images/2logo.png" id="bgvid2" autoplay loop muted>
       <source class="v3" src="images/robot2.mp4" type="video/mp4">
       <source class="v4" src="images/robot2.webm" type="video/webm">
     </video>
@@ -431,6 +450,7 @@ print_r($files1);
     </div>
   </div>
   <!--main menu end-->
+
   <script type="text/javascript">
     var pageName = "#index"
     var h_video = $(".topvideo").height()
@@ -483,13 +503,13 @@ print_r($files1);
       $('html, body').scrollTop(0);
       //TweenLite.defaultOverwrite = "all";
       resetPageView()
-      console.log("load complete")
-      var line = $(".loading-line")
+      console.log("on load")
+      /*var line = $(".loading-line")
       var ww = $(window).width()
       TweenLite.to(line, 0.5, {
         width: ww,
         onComplete: loadFinish
-      })
+      })*/
       var hh2 = $(window).height() / 2
       var hh = hh2 + $(window).width() * 0.088
 
@@ -690,10 +710,6 @@ print_r($files1);
             .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},1)
             .to(vmask, 0.8, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 1.5)
       }
-
-      /*console.log("bh:"+bh)
-      tl.to(blacktop,0.8,{top:0, ease: Power4.easeIn},0)
-        .to(blackbot,0.8,{bottom:0, ease: Power4.easeIn},0)*/
     }
     function initAbout(){
       console.log("initAbout")
@@ -779,10 +795,6 @@ print_r($files1);
       showreel.css("overflow","hidden")
       var tl = new TimelineLite();
       tl.to(showreel,1, {height: h_showreel, ease: Power4.easeOut})
-      //
-      //$(".c_showreel").show()
-      //$(".mask-block.mtop .fillblock").css("top",bh)
-      //$(".mask-block.mbot .fillblock").css("bottom",bh)
     }
     function loadFinish() {
       var line = $(".loading-line")
@@ -850,16 +862,6 @@ print_r($files1);
             .from(am2, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 2.7)
             .from(am1, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 2.8)
             .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 2.9)
-            /*.to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},0.3)
-            .to(about,0.5,{top:0,opacity:1, ease: Power4.easeOut},0.2)
-            .to(vmask, 0.5, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 0.8)
-            .to(service, 0.8, {opacity:1, height: h_service,ease: Back.easeOut.config(2.5)}, 1.5)
-            .from(am3, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.4)
-            .from(am2, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.5)
-            .from(am1, 0.8, {top: -200,ease: Back.easeOut.config(2.5)}, 0.6)
-            .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 0.7)*/
-
-//.from(logo, 0.8, {top: -300, ease: Back.easeOut.config(2.5)}, 0.3)
       } else {
         console.log("t1_2")
         tl.set(service, {opacity:0})
@@ -872,13 +874,6 @@ print_r($files1);
           .to(service, 0.8, {opacity:1, height: h_service,ease: Back.easeOut.config(2.5)}, 4)
           .from(home_btn, 0.8, {right: -200,ease: Back.easeOut.config(1)}, 2.9)
           .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 2.9)
-          /*tl.to(about,1,{top:0,opacity:1, ease: Power4.easeOut},0)
-            .to(service, 0.8, {height: h_service,ease: Back.easeOut.config(2.5)}, 0.3)
-            .to(video,1, {height: h_video, ease: Back.easeOut.config(2.5)},1)
-            .to(vmask, 0.8, {height: 0,ease: Power4.easeIn,onComplete: unFreeze}, 1.5)
-            .from(logo, 0.8, {top: -300, ease: Back.easeOut.config(2.5)}, 0.3)
-            .from(home_btn, 0.8, {right: -200,ease: Back.easeOut.config(1)}, 0.5)
-            .from(hem, 1, {left: -200,ease: Back.easeOut.config(2.5)}, 0.5)*/
       }
     }
 
